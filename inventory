@@ -1,32 +1,29 @@
 [mongodb]
-mongodb.sailasdevops.online
+mongodb.joindevops.online
 
 [catalogue]
-catalogue.sailasdevops.online
-
-[cart]
-cart.sailasdevops.online
+catalogue.joindevops.online
 
 [web]
-web.sailasdevops.online
-
-[user]
-user.sailasdevops.online
+web.joindevops.online
 
 [redis]
-redis.sailasdevops.online
+redis.joindevops.online
+
+[user]
+user.joindevops.online
+
+[cart]
+cart.joindevops.online
 
 [mysql]
-mysql.sailasdevops.online
-
+mysql.joindevops.online
 
 [shipping]
-shipping.sailasdevops.online
-
+shipping.joindevops.online
 
 [rabbitmq]
-rabbitmq.sailasdevops.online
+rabbitmq.joindevops.online
 
-
-[payments]
-payments.sailasdevops.online
+[payment]
+payment.joindevops.online
