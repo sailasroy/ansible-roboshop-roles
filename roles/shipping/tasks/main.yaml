@@ -9,9 +9,9 @@
     tasks_from: setup-app
 
 - name: Installing Dependencies
-    ansible.builtin.command: mvn clean package
-    args: 
-      chdir: /app ## need to use for installing through remote/ansible
+  ansible.builtin.command: mvn clean package
+  args: 
+    chdir: /app ## need to use for installing through remote/ansible
 
 - name: Starting up applications
   ansible.builtin.import_roles:
