@@ -3,8 +3,8 @@
     name: common
     tasks_from: python
 
-- name: Setting up applications
-  ansible.bulitin.import_role:
+- name: SetUp Application
+  ansible.builtin.import_role:
     name: common
     tasks_from: setup-app
 
