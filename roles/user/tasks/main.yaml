@@ -1,26 +1,24 @@
-- name: Installing Nodejs
-  ansible.bulitin.import_role:
+- name: Install NodeJS
+  ansible.builtin.import_role:
     name: common
     tasks_from: nodejs
 
-- name: Setting up applications
+- name: SetUp Application
   ansible.builtin.import_role:
     name: common
     tasks_from: setup-app
 
-
-- name: Installing dependencies
-  ansible.builtin.command: npm install 
+- name: install dependencies
+  ansible.builtin.command: npm install
   args:
     chdir: /app
 
-
-- name: Loading Mysql Schema
+- name: Load Schema
   ansible.builtin.import_role:
     name: common
     tasks_from: load-mongo-schema
 
-- name: Starting application
+- name: SetUp Application
   ansible.builtin.import_role:
     name: common
     tasks_from: systemd-setup
