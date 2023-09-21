@@ -1,28 +1,29 @@
-- name: Installing Nodejs
-  ansible.bulitin.import_role:
+# I need to refer nodejs tasks in common folder
+# catalogue is one role
+# common is also another role
+# I need to import a task nodejs.yaml in catalogue
+
+- name: Install NodeJS
+  ansible.builtin.import_role:
     name: common
     tasks_from: nodejs
 
-- name: Setting up applications
+- name: SetUp Application
   ansible.builtin.import_role:
     name: common
-    tasks_from: setup-app
+    tasks_from: app-setup
 
-
-- name: Installing dependencies
-  ansible.builtin.command: npm install 
+- name: install dependencies
+  ansible.builtin.command: npm install
   args:
     chdir: /app
 
-
-- name: Loading Schema
-  ansible.builtin.import_roles:
+- name: Load Schema
+  ansible.builtin.import_role:
     name: common
     tasks_from: load-mongo-schema
 
-- name: Starting application
-  ansible.builtin.import_roles:
+- name: Start application
+  ansible.builtin.import_role:
     name: common
     tasks_from: systemd-setup
-
-
