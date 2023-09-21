@@ -1,10 +1,10 @@
 - name: Installing Maven
-  ansible.bulitin.import_roles:
+  ansible.bulitin.import_role:
     name: common
     tasks_from: maven
 
 - name: Setting up applications
-  ansible.builtin.import_roles:
+  ansible.builtin.import_role:
     name: common
     tasks_from: setup-app
 
@@ -14,17 +14,17 @@
     chdir: /app ## need to use for installing through remote/ansible
 
 - name: Starting up applications
-  ansible.builtin.import_roles:
+  ansible.builtin.import_role:
     name: common
     tasks_from: setup-app
 
 - name: Loading mysql Schema
-  ansible.builtin.import_roles:
+  ansible.builtin.import_role:
     name: common
     tasks_from: load-mysql-schema
 
 
 - name: Starting Applications
-  ansible.builtin.import_roles:
+  ansible.builtin.import_role:
     name: common
     tasks_from: systemd-setup

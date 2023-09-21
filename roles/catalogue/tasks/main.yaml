@@ -1,10 +1,10 @@
 - name: Installing Nodejs
-  ansible.bulitin.import_roles:
+  ansible.bulitin.import_role:
     name: common
     tasks_from: nodejs
 
 - name: Setting up applications
-  ansible.builtin.import_roles:
+  ansible.builtin.import_role:
     name: common
     tasks_from: setup-app
 
